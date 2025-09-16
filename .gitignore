@@ -1,0 +1,9 @@
+*.csv
+__pycache__/
+*.pyc
+.env
+*.json
+*.yml
+Dockerfile
+*.txt
+*.sh
