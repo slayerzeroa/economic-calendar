@@ -20,8 +20,6 @@ def main():
     crypto / economic 이벤트를 DB에 저장하고
     Google Calendar에 동기화한다.
     """
-
-
     try:
         # 오늘+7일 날짜를 YYYY-MM-DD 문자열로 생성
         target_date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
