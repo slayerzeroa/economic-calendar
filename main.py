@@ -22,7 +22,7 @@ def main():
     """
     try:
         # 오늘+7일 날짜를 YYYY-MM-DD 문자열로 생성
-        target_date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
+        target_date = (datetime.now() + timedelta(days=6)).strftime("%Y-%m-%d")
         # 1️. Bitget Crypto Calendar 하루치 수집
         # crypto_df = bec.fetch_crypto_calendar_daily(target_date, page_size=100)
         crypto_df = bec.fetch_crypto_calendar_range(datetime.now().strftime("%Y-%m-%d"), target_date, page_size=100)
@@ -32,7 +32,7 @@ def main():
             crypto_df = crypto_df.drop_duplicates(subset=["id"])
 
         # 오늘+7일 날짜를 YYYY-MM-DD 문자열로 생성
-        target_date = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
+        target_date = (datetime.now() + timedelta(days=6)).strftime("%Y-%m-%d")
         # 2️. Investing Economic Calendar 하루치 수집
         econ_df = ec.fetch_investing_range(target_date, target_date, tz_offset=9)
         if isinstance(econ_df, list):
